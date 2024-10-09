@@ -1,4 +1,3 @@
-from http.client import HTTPException
 from fastapi import Depends, HTTPException, Path, APIRouter
 from pydantic import BaseModel, Field
 from starlette import status
