@@ -1,5 +1,5 @@
 from typing import Annotated
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, Path
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 from database import SessionLocal
@@ -46,6 +46,15 @@ async def change_password(user:user_dependency, user_verify: VerifyUser, db: db_
     if not bcrypt_context.verify(user_verify.password, user_model.hashed_password):
         raise HTTPException(status_code=401, detail='Password Mismatch')
     user_model.hashed_password = bcrypt_context.hash(user_verify.new_password)
+    db.add(user_model)
+    db.commit()
+
+@router.put("/update_number/{number}", status_code=status.HTTP_204_NO_CONTENT)
+async def update_number(db: db_dependency, user: user_dependency, number: str):
+    if user is None:
+        raise HTTPException(status_code=401, detail='Authorization Failed')
+    user_model = db.query(Users).filter(Users.id == user.get('id')).first()
+    user_model.phone_number = number
     db.add(user_model)
     db.commit()
 
