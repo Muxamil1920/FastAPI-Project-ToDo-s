@@ -1,7 +1,7 @@
 from fastapi import Depends, HTTPException, Path, APIRouter
 from starlette import status
-from models import Todos
-from database import SessionLocal
+from ..models import Todos
+from ..database import SessionLocal
 from sqlalchemy.orm import Session
 from typing import Annotated
 from .auth import get_current_user
@@ -25,7 +25,7 @@ user_dependency = Annotated[dict, Depends(get_current_user)]
 @router.get("/all", status_code=status.HTTP_200_OK)
 async def read_all_todos(user: user_dependency, db: db_dependency):
     if user is None or user.get("role") not in ["admin","Admin"]:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Authorization Failed")
+        raise HTTPException(status_code = status.HTTP_401_UNAUTHORIZED, detail="Authorization Failed")
     return db.query(Todos).all()
 
 @router.delete("/delete_todo/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
