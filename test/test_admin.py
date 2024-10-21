@@ -27,4 +27,11 @@ def test_delete_admin(test_todo):
     assert model is None
 
 
+def test_delete_admin_not_found():
+    response = client.delete("/admin/delete_todo/999")
+    assert response.status_code == status.HTTP_404_NOT_FOUND
+    assert response.json() == {"detail": "Todo not Found"}
+
+
+
 
