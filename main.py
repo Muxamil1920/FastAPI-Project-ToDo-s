@@ -1,12 +1,11 @@
 from fastapi import FastAPI, status
 from .models import Base
 from .database import engine
-from TodosApp.routers import auth, todos, admin, user
-
+from .routers import auth, todos, admin, user
 
 app = FastAPI()
 
-@app.get("/health",status_code=status.HTTP_200_OK)
+@app.get("/health", status_code=status.HTTP_200_OK)
 async def check_health():
     return {'status': 'Healthy'}
 

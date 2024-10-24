@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine, text
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 from ..database import Base
@@ -45,9 +46,9 @@ def test_todo():
     db.add(todo)
     db.commit()
     yield todo
+    db.close()
     with engine.connect() as connection:
         connection.execute(text('DELETE FROM Todos;'))
-        connection.commit()
 
 client = TestClient(app)
 
@@ -57,19 +58,20 @@ def test_user():
     user = Users (
     email = "muxamil@email.com",
     username = 'muxamil',
-    first_name = 'Bhat',
-    last_name = 'Muxamil',
+    first_name = 'Muzamil',
+    last_name = 'Bhat',
     hashed_password = bcrypt_context.hash('test123'),
     is_active = True,
     role = 'admin',
-    phone_number = 968230229,
+    phone_number = 9682302290,
     )
 
     db.add(user)
     db.commit()
 
     yield user
-
+    db.close()
     with engine.connect() as connection:
         connection.execute(text("DELETE FROM Users"))
-        connection.commit()
+
+
