@@ -65,6 +65,20 @@ async def render_todo_page(request: Request):
         return redirect_to_login()
 
 
+@router.get("/edit-todo-page/{todo_id}")
+async def render_edit_todo_page(request: Request, todo_id: int, db: db_dependency):
+    try:
+        user = await get_current_user(request.cookies.get("access_token"))
+
+        if user is None:
+            return redirect_to_login()
+
+        todo = db.query(Todos).filter(Todos.id == todo_id).first()
+
+        return templates.TemplateResponse("edit-todo.html", {"request": request, "todo": todo, "user": user})
+    except:
+        return redirect_to_login()
+
 ## Endpoints ##
 @router.get("/",status_code=status.HTTP_200_OK)
 async def read_all(user: user_dependency, db: db_dependency):
@@ -89,7 +103,7 @@ async def create_todo(user: user_dependency, db: db_dependency, todo_request: To
     db.add(todo_model)
     db.commit()
 
-@router.put("/update_todo/{todo_id}/", status_code=status.HTTP_204_NO_CONTENT)
+@router.put("/update_todo/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def update_todo(user:user_dependency, db: db_dependency, todo_id: int, todo_request: TodoRequest):
     if user is None:
         raise HTTPException(status_code=401, detail='Unauthorized Access')
@@ -100,8 +114,6 @@ async def update_todo(user:user_dependency, db: db_dependency, todo_id: int, tod
     todo_model.description = todo_request.description
     todo_model.priority = todo_request.priority
     todo_model.complete = todo_request.complete
-
-    db.add(todo_model)
     db.commit()
 
 @router.delete("/delete_todo/{todo_id}",status_code=status.HTTP_204_NO_CONTENT)
