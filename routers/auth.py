@@ -1,5 +1,5 @@
 from typing import Annotated
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from starlette import status
@@ -9,7 +9,7 @@ from ..models import Users
 from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import timedelta, datetime, timezone
-
+from fastapi.templating import Jinja2Templates
 
 class CreateUserRequest(BaseModel):
     email: str
@@ -47,6 +47,20 @@ router = APIRouter(
 
 bcrypt_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
 
+templates = Jinja2Templates(directory="TodosApp/templates")
+
+### Pages ###
+
+@router.get("/login-page")
+def render_login_page(request : Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+@router.get("/register-page")
+def render_register_page(request : Request):
+    return templates.TemplateResponse("register.html", {"request": request})
+
+
+### Api Routes ###
 def authenticate_user(username: str, password: str, db):
     user = db.query(Users).filter(Users.username == username).first()
     if not user:
@@ -83,7 +97,7 @@ async def create_user(db: db_dependency, create_user_request: CreateUserRequest)
         username = create_user_request.username,
         first_name = create_user_request.first_name,
         last_name = create_user_request.last_name,
-        phone_number = create_user_request.phone_numbere,
+        phone_number = create_user_request.phone_number,
         role = create_user_request.role,
         hashed_password = bcrypt_context.hash(create_user_request.password),
         is_active = True
