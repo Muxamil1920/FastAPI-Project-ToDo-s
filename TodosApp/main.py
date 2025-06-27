@@ -1,6 +1,6 @@
 from fastapi import FastAPI, status, Request
 from .models import Base
-from .database import engine
+from TodosApp.database import engine
 from .routers import auth, todos, admin, user
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse

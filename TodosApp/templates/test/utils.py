@@ -2,12 +2,12 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
-from ..database import Base
+from TodosApp.database import Base
 import pytest
 from fastapi.testclient import TestClient
-from ..main import app
-from ..models import Todos, Users
-from ..routers.auth import bcrypt_context
+from TodosApp.main import app
+from TodosApp.models import Todos, Users
+from routers.auth import bcrypt_context
 
 
 SQLALCHEMY_DATABASE_URL = 'sqlite:///./testdb.db'

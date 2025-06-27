@@ -1,7 +1,7 @@
 from fastapi import Depends, HTTPException, Path, APIRouter
 from starlette import status
-from ..models import Todos
-from ..database import SessionLocal
+from TodosApp.models import Todos
+from TodosApp.database import SessionLocal
 from sqlalchemy.orm import Session
 from typing import Annotated
 from .auth import get_current_user
