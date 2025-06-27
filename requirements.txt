@@ -1,76 +1,15 @@
-alembic @ file:///C:/b/abs_9dfubpaeyo/croot/alembic_1729532445549/work
-anyio @ file:///C:/b/abs_847uobe7ea/croot/anyio_1706220224037/work
-appdirs==1.4.4
-arabic-reshaper==3.0.0
-archspec @ file:///croot/archspec_1709217642129/work
-argon2-cffi @ file:///opt/conda/conda-bld/argon2-cffi_1645000214183/work
-argon2-cffi-bindings @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/argon2-cffi-bindings_1699549801117/work
-arrow @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/arrow_1699549851004/work
-asgiref==3.8.1
-asn1crypto==1.5.1
-astroid @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/astroid_1699480418189/work
-atomicwrites==1.4.0
-attrs @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/attrs_1699473735254/work
-bcrypt @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/bcrypt_1699483842258/work
-certifi @ file:///C:/b/abs_59o0xj7aav/croot/certifi_1734473304008/work/certifi
-cffi @ file:///C:/b/abs_90yq4lmu83/croot/cffi_1726856448345/work
-charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
-click @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/click_1699473800648/work
-colorama @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/colorama_1699472650914/work
-cryptography==45.0.4
-distlib
-django-crispy-forms
-dnspython
-ecdsa==0.19.1
-email-validator
-fastapi==0.115.6
-filelock @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/filelock_1701807523603/work
-greenlet @ file:///C:/b/abs_a6c75ie0bc/croot/greenlet_1702060012174/work
-h11 @ file:///C:/b/abs_1czwoyexjf/croot/h11_1706652332846/work
-idna @ file:///C:/b/abs_aad84bnnw5/croot/idna_1714398896795/work
-iniconfig @ file:///home/linux1/recipes/ci/iniconfig_1610983019677/work
-isort @ file:///C:/b/abs_50iy840e4z/croot/isort_1718291849200/work
-itsdangerous @ file:///C:/b/abs_c4vwgdr5yn/croot/itsdangerous_1716533399914/work
-Jinja2 @ file:///C:/b/abs_92fccttino/croot/jinja2_1716993447201/work
-lazy-object-proxy @ file:///C:/b/abs_19td_nzb6n/croot/lazy-object-proxy_1712908735070/work
-Mako @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/mako_1699481695868/work
-MarkupSafe @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/markupsafe_1707425732791/work
-mccabe @ file:///opt/conda/conda-bld/mccabe_1644221741721/work
-mysql-connector-python==8.0.27
-orjson==3.6.8
-packaging @ file:///C:/b/abs_c3vlh0z4jw/croot/packaging_1720101866539/work
-passlib==1.7.4
-pillow @ file:///C:/b/abs_32o8er3uqp/croot/pillow_1721059447598/work
-pluggy @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/pluggy_1699472504117/work
-psycopg2-binary==2.9.3
-py==1.11.0
-pyarrow @ file:///C:/b/abs_cbc4sg_1e0/croot/pyarrow_1721664257308/work/python
-pyasn1==0.6.1
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
-pydantic @ file:///C:/b/abs_b7acb4hnl_/croot/pydantic_1725040540545/work
-pyparsing @ file:///C:/b/abs_520r19rysg/croot/pyparsing_1725041656021/work
-pytest @ file:///C:/b/abs_een_3z747j/croot/pytest_1717793253670/work
-python-dotenv @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/python-dotenv_1699475097728/work
-python-jose==3.5.0
-python-multipart==0.0.20
-pytz @ file:///C:/b/abs_6ap4tsz1ox/croot/pytz_1713974360290/work
-PyYAML @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/pyyaml_1699479991712/work
-requests @ file:///C:/b/abs_9frifg92q2/croot/requests_1721410901096/work
-rsa==4.9.1
-six @ file:///tmp/build/80754af9/six_1644875935023/work
-sniffio @ file:///C:/b/abs_3akdewudo_/croot/sniffio_1705431337396/work
-SQLAlchemy @ file:///C:/b/abs_7duxw5rxx8/croot/sqlalchemy_1725885067126/work
-sqlparse==0.3.1
-starlette==0.41.3
-toml @ file:///tmp/build/80754af9/toml_1616166611790/work
-tomli @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/tomli_1699472528897/work
-typing_extensions @ file:///C:/b/abs_0as9mdbkfl/croot/typing_extensions_1715268906610/work
-ujson @ file:///C:/b/abs_c93a278xy4/croot/ujson_1717598062082/work
-urllib3 @ file:///C:/b/abs_9a_f8h_bn2/croot/urllib3_1727769836930/work
-uvicorn==0.34.0
-watchdog @ file:///C:/b/abs_b3l_3s276z/croot/watchdog_1717166538403/work
-virtualenv==20.2.2
-websocket-client @ file:///C:/b/abs_5dmnxxoci9/croot/websocket-client_1715878351319/work
-websockets==14.1
-wrapt @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/wrapt_1699480231633/work
-
+bcrypt==4.0.1
+cryptography
+fastapi
+psycopg2-binary
+PyMySQL
+python-jose
+python-multipart
+SQLAlchemy
+uvicorn
+passlib
+pytest
+httpx
+pytest-asyncio
+aiofiles
+jinja2
